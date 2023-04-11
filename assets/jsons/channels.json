@@ -48,6 +48,18 @@
     "link": "https://www.espn.com.br/"
   },
   {
+    "name": "Estádio TNT Sports",
+    "logo": "https://mondrian.claro.com.br/channels/default/estadio-tnt-sports.svg",
+    "source": "Internet",
+    "link": "https://www.br.estadio.com/"
+  },
+  {
+    "name": "HBO Max",
+    "logo": "https://mondrian.claro.com.br/channels/default/hbo-max.svg",
+    "source": "Internet",
+    "link": "https://www.hbomax.com/"
+  },
+  {
     "name": "TV Globo",
     "logo": "https://mondrian.claro.com.br/channels/default/globo.svg",
     "source": "TV",
@@ -94,6 +106,12 @@
     "logo": "https://static-assets.bamgrid.com/product/starplus/images/logo.770970996243b55d166fbeb8b1a52b36.svg",
     "source": "Internet",
     "link": "https://www.starplus.com/home"
+  },
+  {
+    "name": "TNT",
+    "logo": "https://mondrian.claro.com.br/channels/default/tnt.svg",
+    "source": "Internet",
+    "link": "https://tnt.com.br/"
   },
   {
     "name": "TV Cultura",

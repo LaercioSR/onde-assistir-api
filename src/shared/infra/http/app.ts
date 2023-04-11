@@ -7,6 +7,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerOptions from "@config/swagger";
 
 import "@shared/container";
+import "@shared/jobs";
 
 import swaggerFile from "../../../swagger.json";
 import { router } from "./routes";

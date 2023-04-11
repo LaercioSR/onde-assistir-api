@@ -1,6 +1,6 @@
-import channels from "assets/jsons/channels.json";
 import { inject, injectable } from "tsyringe";
 
+import channels from "../../../../assets/jsons/channels.json";
 import { IChannelsRepository } from "../repositories/IChannelsRepository";
 
 @injectable()

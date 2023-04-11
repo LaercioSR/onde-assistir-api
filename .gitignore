@@ -1,5 +1,5 @@
-
-
+assets/exports/*
+!assets/exports/.gitkeep
 
 ######### Node #########
 # Logs
