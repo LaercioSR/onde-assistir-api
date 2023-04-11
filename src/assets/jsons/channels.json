@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Amazon Prime",
+    "logo": "https://mondrian.claro.com.br/channels/default/prime-video.svg",
+    "source": "Internet",
+    "link": "https://www.primevideo.com/"
+  },
+  {
+    "name": "TV Bandeirantes",
+    "logo": "https://mondrian.claro.com.br/channels/default/band.svg",
+    "source": "TV",
+    "link": "https://www.band.uol.com.br/ao-vivo"
+  },
+  {
+    "name": "BandSports",
+    "logo": "https://mondrian.claro.com.br/channels/default/band-sports.svg",
+    "source": "TV",
+    "link": "https://bandsports.band.uol.com.br/ao-vivo"
+  },
+  {
+    "name": "DAZN",
+    "logo": "https://pkg.fe.indazn.com/@dazn/landing-page-experiments/lib/0.9.56/dist/static/assets/dazn.f74c3ff5cbf64b90b6412884b420f80d.svg",
+    "source": "Internet",
+    "link": "https://www.dazn.com/"
+  },
+  {
+    "name": "ESPN",
+    "logo": "https://mondrian.claro.com.br/channels/default/espn.svg",
+    "source": "TV",
+    "link": "https://www.espn.com.br/"
+  },
+  {
+    "name": "ESPN 2",
+    "logo": "https://mondrian.claro.com.br/channels/default/espn-2.svg",
+    "source": "TV",
+    "link": "https://www.espn.com.br/"
+  },
+  {
+    "name": "ESPN 3",
+    "logo": "https://mondrian.claro.com.br/channels/default/espn-3.svg",
+    "source": "TV",
+    "link": "https://www.espn.com.br/"
+  },
+  {
+    "name": "ESPN 4",
+    "logo": "https://mondrian.claro.com.br/channels/default/espn-4.svg",
+    "source": "TV",
+    "link": "https://www.espn.com.br/"
+  },
+  {
+    "name": "TV Globo",
+    "logo": "https://mondrian.claro.com.br/channels/default/globo.svg",
+    "source": "TV",
+    "link": "https://globo.com"
+  },
+  {
+    "name": "Nosso Futebol",
+    "logo": "https://mondrian.claro.com.br/channels/default/nosso-futebol.svg",
+    "source": "TV",
+    "link": "https://www.claro.com.br/claro-tv-mais/assinar/nosso-futebol"
+  },
+  {
+    "name": "OneFootball",
+    "logo": "https://images.ctfassets.net/furi30ndpl6w/5UP8QC1x8IYQHSOH1lSyHH/e77fde0359f9d734ba85852f3e78b3af/preview.png",
+    "source": "Internet",
+    "link": "https://onefootball.com/"
+  },
+  {
+    "name": "Paramount+",
+    "logo": "https://mondrian.claro.com.br/channels/default/paramountplus.svg",
+    "source": "Internet",
+    "link": "https://www.paramountplus.com/"
+  },
+  {
+    "name": "Premiere",
+    "logo": "https://mondrian.claro.com.br/channels/default/premiere.svg",
+    "source": "Internet",
+    "link": "https://premiere.globo.com/"
+  },
+  {
+    "name": "SBT",
+    "logo": "https://mondrian.claro.com.br/channels/default/sbt.svg",
+    "source": "TV",
+    "link": "https://www.sbt.com.br/ao-vivo"
+  },
+  {
+    "name": "SporTV",
+    "logo": "https://mondrian.claro.com.br/channels/default/sportv.svg",
+    "source": "TV",
+    "link": "https://ge.globo.com/sportv/"
+  },
+  {
+    "name": "Star+",
+    "logo": "https://static-assets.bamgrid.com/product/starplus/images/logo.770970996243b55d166fbeb8b1a52b36.svg",
+    "source": "Internet",
+    "link": "https://www.starplus.com/home"
+  },
+  {
+    "name": "TV Cultura",
+    "logo": "https://mondrian.claro.com.br/channels/default/cultura.svg",
+    "source": "TV",
+    "link": "https://cultura.uol.com.br/"
+  }
+]
