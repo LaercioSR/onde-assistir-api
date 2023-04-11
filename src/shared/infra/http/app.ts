@@ -4,13 +4,12 @@ import cors from "cors";
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 
-import { router } from "./routes";
+import swaggerOptions from "@config/swagger";
 
 import "@shared/container";
 
 import swaggerFile from "../../../swagger.json";
-
-import swaggerOptions from "@config/swagger";
+import { router } from "./routes";
 
 const app = express();
 
