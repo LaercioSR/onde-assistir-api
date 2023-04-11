@@ -17,6 +17,11 @@ export class CreateTableChannel1681219936194 implements MigrationInterface {
             type: "varchar",
           },
           {
+            name: "logo",
+            type: "varchar",
+            isNullable: true,
+          },
+          {
             name: "source",
             type: "varchar",
             isNullable: true,
