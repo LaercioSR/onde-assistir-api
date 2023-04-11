@@ -2,10 +2,11 @@
   "name": "broadcasts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/shared/infra/http/server.js",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
+    "start": "NODE_ENV=production node dist/shared/infra/http/server.js",
     "test": "NODE_ENV=test jest --runInBand --detectOpenHandles",
     "typeorm": "NODE_ENV=database typeorm-ts-node-commonjs -d ./src/shared/infra/typeorm/dataSource.ts",
     "migration:generate": "typeorm migration:generate",
