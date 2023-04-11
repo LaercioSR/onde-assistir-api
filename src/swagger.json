@@ -7,6 +7,10 @@
   },
   "servers": [
     {
+      "url": "http://gamecastcentral.laerciorios.com/api",
+      "description": "The production API server"
+    },
+    {
       "url": "http://localhost:{port}/api",
       "description": "The local API server",
       "variables": {
@@ -14,17 +18,9 @@
           "default": "3333"
         }
       }
-    },
-    {
-      "url": "",
-      "description": "The production API server"
     }
   ],
   "tags": [
-    {
-      "name": "Teams",
-      "description": "Routes for teams data"
-    },
     {
       "name": "Broadcasts",
       "description": "Routes for broadcasts data"
