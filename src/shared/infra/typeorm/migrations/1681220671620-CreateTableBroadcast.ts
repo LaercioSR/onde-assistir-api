@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateTableTransmition1681220671620 implements MigrationInterface {
+export class CreateTableBroadcast1681220671620 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "transmition",
+        name: "broadcast",
         columns: [
           {
             name: "game_id",
@@ -39,7 +39,7 @@ export class CreateTableTransmition1681220671620 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "FKTransmitionGame",
+            name: "FKBroadcastGame",
             referencedTableName: "game",
             referencedColumnNames: ["id"],
             columnNames: ["game_id"],
@@ -47,7 +47,7 @@ export class CreateTableTransmition1681220671620 implements MigrationInterface {
             onUpdate: "CASCADE",
           },
           {
-            name: "FKTransmitionChannel",
+            name: "FKBroadcastChannel",
             referencedTableName: "channel",
             referencedColumnNames: ["id"],
             columnNames: ["channel_id"],
@@ -60,6 +60,6 @@ export class CreateTableTransmition1681220671620 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("transmition");
+    await queryRunner.dropTable("broadcast");
   }
 }

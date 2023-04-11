@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   logging: process.env.LOGGING ? process.env.LOGGING === "true" : false,
   entities:
-    process.env.NODE_ENV === "migration"
+    process.env.NODE_ENV === "database"
       ? []
       : [
           "src/modules/**/entities/*.ts",
