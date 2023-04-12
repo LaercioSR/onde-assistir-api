@@ -6,6 +6,7 @@ import {
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { v4 as uuidV4 } from "uuid";
 
 @Entity("competition")
 export class Competition {
@@ -34,4 +35,10 @@ export class Competition {
 
   @DeleteDateColumn({ select: false })
   deleted_at?: Date;
+
+  constructor() {
+    if (!this.id) {
+      this.id = uuidV4();
+    }
+  }
 }

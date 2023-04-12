@@ -3,24 +3,35 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryColumn,
   UpdateDateColumn,
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("channel")
-export class Channel {
+import { Channel } from "@modules/channels/infra/typeorm/entities/Channel";
+
+import { Game } from "./Game";
+
+@Entity("broadcast")
+export class Broadcast {
   @PrimaryColumn()
   id!: string;
 
   @Column()
-  name!: string;
+  game_id!: string;
+
+  @ManyToOne(() => Game)
+  @JoinColumn({ name: "game_id" })
+  game: Game;
 
   @Column()
-  logo?: string;
+  channel_id!: string;
 
-  @Column()
-  source?: string;
+  @ManyToOne(() => Channel)
+  @JoinColumn({ name: "channel_id" })
+  channel: Channel;
 
   @Column()
   link?: string;

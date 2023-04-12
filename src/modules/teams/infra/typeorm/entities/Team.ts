@@ -8,8 +8,8 @@ import {
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("channel")
-export class Channel {
+@Entity("team")
+export class Team {
   @PrimaryColumn()
   id!: string;
 
@@ -18,12 +18,6 @@ export class Channel {
 
   @Column()
   logo?: string;
-
-  @Column()
-  source?: string;
-
-  @Column()
-  link?: string;
 
   @CreateDateColumn({
     default: () => "CURRENT_TIMESTAMP",

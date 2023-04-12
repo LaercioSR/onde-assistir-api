@@ -1,7 +1,10 @@
 import { CronJob } from "cron";
+import { container } from "tsyringe";
 
-import { crawlerJob } from "./crawlerJob";
-import { saveBroadcastsJob } from "./saveBroadcastsJob";
+import { CrawlerJob } from "./CrawlerJob";
+import { SaveBroadcastsJob } from "./SaveBroadcastsJob";
 
-new CronJob("0 0 4 * * *", crawlerJob).start();
-new CronJob("40 6 * * * *", saveBroadcastsJob).start();
+const crawlerJob = container.resolve(CrawlerJob);
+new CronJob("0 0 4 * * *", () => crawlerJob.run()).start();
+const saveBroadcastsJob = container.resolve(SaveBroadcastsJob);
+new CronJob("0 0 4 * * *", () => saveBroadcastsJob.run()).start();

@@ -7,14 +7,18 @@ export class CreateTableBroadcast1681220671620 implements MigrationInterface {
         name: "broadcast",
         columns: [
           {
-            name: "game_id",
+            name: "id",
             type: "uuid",
             isPrimary: true,
+            default: "gen_random_uuid()",
+          },
+          {
+            name: "game_id",
+            type: "uuid",
           },
           {
             name: "channel_id",
             type: "uuid",
-            isPrimary: true,
           },
           {
             name: "link",
