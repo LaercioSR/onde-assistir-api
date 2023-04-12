@@ -1,6 +1,7 @@
 import { MoreThanOrEqual, Repository } from "typeorm";
 
 import { ICreateGameDTO } from "@modules/teams/dtos/ICreateGameDTO";
+import { ISearchGamesDTO } from "@modules/teams/dtos/ISearchGamesDTO";
 import { IGamesRepository } from "@modules/teams/repositories/IGamesRepository";
 import { AppDataSource } from "@shared/infra/typeorm/dataSource";
 
@@ -38,7 +39,10 @@ class GamesRepository implements IGamesRepository {
     return game;
   }
 
-  async findNext(): Promise<Game[]> {
+  async findNext({
+    team_id,
+    competition_id,
+  }: ISearchGamesDTO): Promise<Game[]> {
     const dateNow = new Date();
     dateNow.setHours(dateNow.getHours() - 4);
 
@@ -51,7 +55,18 @@ class GamesRepository implements IGamesRepository {
         "broadcasts.channel",
       ],
       order: { date: { direction: "ASC" } },
-      where: { date: MoreThanOrEqual(dateNow) },
+      where: [
+        {
+          date: MoreThanOrEqual(dateNow),
+          competition_id,
+          team_home_id: team_id,
+        },
+        {
+          date: MoreThanOrEqual(dateNow),
+          competition_id,
+          team_away_id: team_id,
+        },
+      ],
     });
 
     return games;

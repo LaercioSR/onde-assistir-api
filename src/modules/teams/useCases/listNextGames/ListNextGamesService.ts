@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
 import { IGameResponseDTO } from "@modules/teams/dtos/IGameResponseDTO";
+import { ISearchGamesDTO } from "@modules/teams/dtos/ISearchGamesDTO";
 import { IGamesRepository } from "@modules/teams/repositories/IGamesRepository";
 
 @injectable()
@@ -10,8 +11,14 @@ class ListNextGamesService {
     private gamesRepository: IGamesRepository
   ) {}
 
-  async execute(): Promise<IGameResponseDTO[]> {
-    const games = await this.gamesRepository.findNext();
+  async execute({
+    team_id,
+    competition_id,
+  }: ISearchGamesDTO): Promise<IGameResponseDTO[]> {
+    const games = await this.gamesRepository.findNext({
+      team_id,
+      competition_id,
+    });
 
     const response: IGameResponseDTO[] = games.map((game) => {
       const team_home = {
