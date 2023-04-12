@@ -4,7 +4,7 @@ const swaggerOptions = {
       display: none
     }
   `,
-  customSiteTitle: "API Broadcasts Documentation",
+  customSiteTitle: "API GameCastCentral Documentation",
   // customfavIcon: "",
 };
 export default swaggerOptions;
