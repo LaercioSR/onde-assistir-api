@@ -7,11 +7,11 @@
   },
   "servers": [
     {
-      "url": "http://gamecastcentral.laerciorios.com/api",
+      "url": "http://34.135.160.6:8080/",
       "description": "The production API server"
     },
     {
-      "url": "http://localhost:{port}/api",
+      "url": "http://localhost:{port}",
       "description": "The local API server",
       "variables": {
         "port": {
@@ -22,9 +22,210 @@
   ],
   "tags": [
     {
-      "name": "Broadcasts",
-      "description": "Routes for broadcasts data"
+      "name": "Competitions",
+      "description": "Routes for competition data"
+    },
+    {
+      "name": "Games",
+      "description": "Routes for games data"
+    },
+    {
+      "name": "Teams",
+      "description": "Routes for teams data"
     }
   ],
-  "paths": {}
+  "paths": {
+    "/competitions": {
+      "get": {
+        "tags": ["Competitions"],
+        "summary": "List competitions",
+        "description": "Lists all competitions in ascending order",
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Competition"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teams": {
+      "get": {
+        "tags": ["Teams"],
+        "summary": "List teams",
+        "description": "Lists all teams in ascending order",
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Team"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/games/next": {
+      "get": {
+        "tags": ["Games"],
+        "summary": "List games",
+        "description": "List next games",
+        "parameters": [
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Team id for search",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "competition",
+            "in": "query",
+            "description": "Competition id for search",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Game"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Competition": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string",
+            "format": "url"
+          },
+          "region_level": {
+            "type": "string",
+            "enum": [
+              "Mundial",
+              "Continental",
+              "Nacional",
+              "Regional",
+              "Estadual"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "example": "Brasil"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "Broadcast": {
+        "type": "object",
+        "properties": {
+          "channel_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string",
+            "format": "url"
+          },
+          "link": {
+            "type": "string",
+            "format": "url"
+          }
+        }
+      },
+      "Team": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string",
+            "format": "url"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      },
+      "Game": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "team_home": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "team_away": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "competition": {
+            "$ref": "#/components/schemas/Competition"
+          },
+          "broadcasts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Broadcast"
+            }
+          }
+        }
+      }
+    }
+  }
 }
