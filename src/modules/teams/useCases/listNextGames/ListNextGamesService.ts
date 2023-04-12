@@ -1,30 +1,7 @@
 import { inject, injectable } from "tsyringe";
 
+import { IGameResponseDTO } from "@modules/teams/dtos/IGameResponseDTO";
 import { IGamesRepository } from "@modules/teams/repositories/IGamesRepository";
-
-interface ITeamResponse {
-  id: string;
-  name: string;
-  logo?: string;
-}
-
-type ICompetitionResponse = ITeamResponse;
-
-interface IBroadcastResponse {
-  channel_id: string;
-  name: string;
-  logo?: string;
-  link?: string;
-}
-
-interface IGameResponse {
-  id: string;
-  date: Date;
-  team_home: ITeamResponse;
-  team_away: ITeamResponse;
-  competition: ICompetitionResponse;
-  broadcasts: IBroadcastResponse[];
-}
 
 @injectable()
 class ListNextGamesService {
@@ -33,10 +10,10 @@ class ListNextGamesService {
     private gamesRepository: IGamesRepository
   ) {}
 
-  async execute(): Promise<IGameResponse[]> {
+  async execute(): Promise<IGameResponseDTO[]> {
     const games = await this.gamesRepository.findNext();
 
-    const response: IGameResponse[] = games.map((game) => {
+    const response: IGameResponseDTO[] = games.map((game) => {
       const team_home = {
         id: game.team_home.id,
         name: game.team_home.name,

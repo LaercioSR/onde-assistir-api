@@ -4,6 +4,7 @@ import { ICreateTeamDTO } from "@modules/teams/dtos/ICreateTeamDTO";
 import { ITeamsRepository } from "@modules/teams/repositories/ITeamsRepository";
 import { AppDataSource } from "@shared/infra/typeorm/dataSource";
 
+import { Game } from "../entities/Game";
 import { Team } from "../entities/Team";
 
 class TeamsRepository implements ITeamsRepository {
@@ -25,6 +26,21 @@ class TeamsRepository implements ITeamsRepository {
     const team = await this.repository.findOne({ where: { name } });
 
     return team;
+  }
+
+  async getGamesById(id: string): Promise<Game[]> {
+    const games_home = await this.repository
+      .createQueryBuilder()
+      .relation("games_home")
+      .of(id)
+      .loadMany();
+    const games_away = await this.repository
+      .createQueryBuilder()
+      .relation("games_away")
+      .of(id)
+      .loadMany();
+
+    return [...games_home, ...games_away];
   }
 }
 

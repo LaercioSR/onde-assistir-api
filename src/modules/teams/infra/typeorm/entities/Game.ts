@@ -24,28 +24,28 @@ export class Game {
   @Column()
   team_home_id!: string;
 
-  @ManyToOne(() => Team)
+  @ManyToOne(() => Team, { eager: true })
   @JoinColumn({ name: "team_home_id" })
   team_home: Team;
 
   @Column()
   team_away_id!: string;
 
-  @ManyToOne(() => Team)
+  @ManyToOne(() => Team, { eager: true })
   @JoinColumn({ name: "team_away_id" })
   team_away: Team;
 
   @Column()
   competition_id?: string;
 
-  @ManyToOne(() => Competition)
+  @ManyToOne(() => Competition, { eager: true })
   @JoinColumn({ name: "competition_id" })
   competition?: Competition;
 
   @Column()
   date!: Date;
 
-  @OneToMany(() => Broadcast, (broadcast) => broadcast.game)
+  @OneToMany(() => Broadcast, (broadcast) => broadcast.game, { eager: true })
   broadcasts: Broadcast[];
 
   @CreateDateColumn({

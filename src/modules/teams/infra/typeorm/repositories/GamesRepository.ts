@@ -13,13 +13,25 @@ class GamesRepository implements IGamesRepository {
     this.repository = AppDataSource.getRepository(Game);
   }
 
-  async create(data: ICreateGameDTO): Promise<Game> {
-    const gameAlreadyExists = await this.repository.findOne({ where: data });
+  async create({
+    team_home_id,
+    team_away_id,
+    date,
+    competition_id,
+  }: ICreateGameDTO): Promise<Game> {
+    const gameAlreadyExists = await this.repository.findOne({
+      where: { team_home_id, team_away_id, date, competition_id },
+    });
     if (gameAlreadyExists) {
       return gameAlreadyExists;
     }
 
-    const game = this.repository.create(data);
+    const game = this.repository.create({
+      team_home_id,
+      team_away_id,
+      date,
+      competition_id,
+    });
 
     await this.repository.save(game);
 
