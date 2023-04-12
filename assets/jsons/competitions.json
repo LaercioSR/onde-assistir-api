@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Brasileirão",
+    "logo": "https://vetores.org/d/campeonato-brasileiro.svg",
+    "region_level": "Nacional",
+    "origin": "Brasil"
+  },
+  {
+    "name": "Série B",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/f/f4/Campeonato_Brasileiro_S%C3%A9rie_B_logo.png",
+    "region_level": "Nacional",
+    "origin": "Brasil"
+  },
+  {
+    "name": "Amistoso Feminino",
+    "logo": "",
+    "region_level": "",
+    "origin": ""
+  },
+  {
+    "name": "Copa do Brasil",
+    "logo": "https://vetores.org/d/copa-do-brasil.svg",
+    "region_level": "Nacional",
+    "origin": "Brasil"
+  },
+  {
+    "name": "Libertadores",
+    "logo": "https://vetores.org/d/conmebol-libertadores.svg",
+    "region_level": "Continental",
+    "origin": "América do Sul"
+  },
+  {
+    "name": "Copa Sul-Americana",
+    "logo": "https://vetores.org/d/conmebol-sudamericana.svg",
+    "region_level": "Continental",
+    "origin": "América do Sul"
+  },
+  {
+    "name": "Brasileirão Feminino A1",
+    "logo": "https://www.ogol.com.br/img/logos/competicoes/2455_imgbank_brf_20190321114926.png",
+    "region_level": "Nacional",
+    "origin": "Brasil"
+  },
+  {
+    "name": "Liga dos Campeões",
+    "logo": "https://vetores.org/d/uefa-champions-league.svg",
+    "region_level": "Continental",
+    "origin": "Europa"
+  },
+  {
+    "name": "Liga Europa",
+    "logo": "https://vetores.org/d/uefa-europa-league.svg",
+    "region_level": "Continental",
+    "origin": "Europa"
+  },
+  {
+    "name": "Cearense",
+    "logo": "https://www.futebolcearense.com.br/2020/assets/images/slider/carousel/logo376.png",
+    "region_level": "Estadual",
+    "origin": "Ceará"
+  },
+  {
+    "name": "Gaúcho",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/f/fc/Gauchao2022.png",
+    "region_level": "Estadual",
+    "origin": "Rio Grande do Sul"
+  },
+  {
+    "name": "Alemão",
+    "logo": "https://vetores.org/d/bundesliga.svg",
+    "region_level": "Nacional",
+    "origin": "Alemanha"
+  },
+  {
+    "name": "Mineiro",
+    "logo": "https://a3.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2360.png",
+    "region_level": "Estadual",
+    "origin": "Minas Gerais"
+  },
+  {
+    "name": "Paulista",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/9/92/Paulist%C3%A3o_sicred_2022.png",
+    "region_level": "Estadual",
+    "origin": "São Paulo"
+  },
+  {
+    "name": "Carioca",
+    "logo": "https://odia.ig.com.br/_midias/jpg/2023/01/02/campeonato_carioca-27570288.jpg",
+    "region_level": "Estadual",
+    "origin": "Rio de Janeiro"
+  },
+  {
+    "name": "Paranaense",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/d/d0/ParanaenseFutebol.png",
+    "region_level": "Estadual",
+    "origin": "Paraná"
+  },
+  {
+    "name": "Copa do Rei",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/6/67/Logo_Copa_del_Rey_2021_%28navy_badge%29.svg",
+    "region_level": "Nacional",
+    "origin": "Espanha"
+  },
+  {
+    "name": "Copa da Alemanha",
+    "logo": "https://www.ogol.com.br/img/logos/competicoes/156_imgbank_dp_20150721171511.png",
+    "region_level": "Nacional",
+    "origin": "Alemanha"
+  },
+  {
+    "name": "Inglês",
+    "logo": "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F23.png",
+    "region_level": "Nacional",
+    "origin": "Inglaterra"
+  },
+  {
+    "name": "Copa da Itália",
+    "logo": "https://a1.espncdn.com/combiner/i?img=%2Fi%2Fleaguelogos%2Fsoccer%2F500%2F2192.png",
+    "region_level": "Nacional",
+    "origin": "Itália"
+  },
+  {
+    "name": "Copa da França",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/b/b0/Coupe_de_France_logo.svg.png",
+    "region_level": "Nacional",
+    "origin": "França"
+  },
+  {
+    "name": "Pernambucano",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/8/8b/Campeonato_Pernambucano_2023.png",
+    "region_level": "Estadual",
+    "origin": "Pernambuco"
+  },
+  {
+    "name": "Finalíssima Feminina",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/b/bf/2023_Women%27s_Finalissima_logo.png?20230405042852",
+    "region_level": "Mundial",
+    "origin": "Mundo"
+  },
+  {
+    "name": "Italiano",
+    "logo": "https://vetores.org/d/serie-a-tim.svg",
+    "region_level": "Nacional",
+    "origin": "Itália"
+  },
+  {
+    "name": "La Liga",
+    "logo": "https://vetores.org/d/laliga.svg",
+    "region_level": "Nacional",
+    "origin": "Espanha"
+  },
+  {
+    "name": "Francês",
+    "logo": "https://vetores.org/wp-content/uploads/ligue-1.png",
+    "region_level": "Nacional",
+    "origin": "França"
+  }
+]
