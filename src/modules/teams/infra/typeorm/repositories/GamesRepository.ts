@@ -1,4 +1,4 @@
-import { Repository } from "typeorm";
+import { MoreThanOrEqual, Repository } from "typeorm";
 
 import { ICreateGameDTO } from "@modules/teams/dtos/ICreateGameDTO";
 import { IGamesRepository } from "@modules/teams/repositories/IGamesRepository";
@@ -27,6 +27,9 @@ class GamesRepository implements IGamesRepository {
   }
 
   async findNext(): Promise<Game[]> {
+    const dateNow = new Date();
+    dateNow.setHours(dateNow.getHours() - 4);
+
     const games = await this.repository.find({
       relations: [
         "team_home",
@@ -35,6 +38,8 @@ class GamesRepository implements IGamesRepository {
         "broadcasts",
         "broadcasts.channel",
       ],
+      order: { date: { direction: "ASC" } },
+      where: { date: MoreThanOrEqual(dateNow) },
     });
 
     return games;
