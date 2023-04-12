@@ -42,6 +42,14 @@ class TeamsRepository implements ITeamsRepository {
 
     return [...games_home, ...games_away];
   }
+
+  async find(): Promise<Team[]> {
+    const teams = await this.repository.find({
+      order: { name: { direction: "ASC" } },
+    });
+
+    return teams;
+  }
 }
 
 export { TeamsRepository };

@@ -36,6 +36,14 @@ class CompetitionsRepository implements ICompetitionsRepository {
 
     return competition;
   }
+
+  async find(): Promise<Competition[]> {
+    const competitions = await this.repository.find({
+      order: { name: { direction: "ASC" } },
+    });
+
+    return competitions;
+  }
 }
 
 export { CompetitionsRepository };

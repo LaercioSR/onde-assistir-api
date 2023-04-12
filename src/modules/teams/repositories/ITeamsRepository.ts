@@ -6,6 +6,7 @@ interface ITeamsRepository {
   create(data: ICreateTeamDTO): Promise<Team>;
   findByName(name: string): Promise<Team>;
   getGamesById(id: string): Promise<Game[]>;
+  find(): Promise<Team[]>;
 }
 
 export { ITeamsRepository };
