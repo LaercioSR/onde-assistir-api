@@ -25,6 +25,20 @@ class GamesRepository implements IGamesRepository {
 
     return game;
   }
+
+  async findNext(): Promise<Game[]> {
+    const games = await this.repository.find({
+      relations: [
+        "team_home",
+        "team_away",
+        "competition",
+        "broadcasts",
+        "broadcasts.channel",
+      ],
+    });
+
+    return games;
+  }
 }
 
 export { GamesRepository };
