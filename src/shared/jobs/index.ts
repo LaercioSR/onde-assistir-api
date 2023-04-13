@@ -7,4 +7,4 @@ import { SaveBroadcastsJob } from "./SaveBroadcastsJob";
 const crawlerJob = container.resolve(CrawlerJob);
 new CronJob("0 0 4 * * *", () => crawlerJob.run()).start();
 const saveBroadcastsJob = container.resolve(SaveBroadcastsJob);
-new CronJob("0 0 4 * * *", () => saveBroadcastsJob.run()).start();
+new CronJob("0 30 4 * * *", () => saveBroadcastsJob.run()).start();
