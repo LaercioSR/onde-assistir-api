@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://34.135.160.6:8080/",
+      "url": "http://gamecastcentral.laerciorios.com/api",
       "description": "The production API server"
     },
     {
