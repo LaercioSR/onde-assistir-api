@@ -15,7 +15,16 @@ interface IBroadcastResponse {
 
 export interface IGameResponseDTO {
   id: string;
-  date: Date;
+  date: Date | string;
+  team_home: ITeamResponse;
+  team_away: ITeamResponse;
+  competition: ICompetitionResponse;
+  broadcasts: IBroadcastResponse[];
+}
+
+export interface IGameTimeResponseDTO {
+  id: string;
+  time: string;
   team_home: ITeamResponse;
   team_away: ITeamResponse;
   competition: ICompetitionResponse;
