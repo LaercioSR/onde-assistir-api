@@ -54,7 +54,7 @@ class ListNextGamesByDateService {
         };
       });
 
-      const time = game.date.toLocaleTimeString().substring(0, 5);
+      const time = game.date.toLocaleTimeString("pt-BR").substring(0, 5);
       const gameWithTime = {
         id: game.id,
         time,
