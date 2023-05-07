@@ -28,7 +28,7 @@ class ListNextGamesByDateService {
     const gamesByDate = new Map<string, IGameTimeResponseDTO[]>();
 
     games.forEach((game) => {
-      const date = game.date.toLocaleDateString();
+      const date = game.date.toISOString().substring(0, 10);
 
       const team_home = {
         id: game.team_home.id,

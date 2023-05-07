@@ -120,6 +120,60 @@
           }
         }
       }
+    },
+    "/games/date": {
+      "get": {
+        "tags": ["Games"],
+        "summary": "List games by date",
+        "description": "List next games by date",
+        "parameters": [
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Team id for search",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "competition",
+            "in": "query",
+            "description": "Competition id for search",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "SUCCESS",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "date": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "games": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Game"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
