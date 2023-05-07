@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import fs from "fs";
 import path from "path";
 import { inject, injectable } from "tsyringe";
@@ -47,7 +48,7 @@ export class SaveBroadcastsJob {
       const dateNow = new Date();
       const yearNow = dateNow.getFullYear();
 
-      footballBroadcasts.forEach(async (broadcast) => {
+      for await (const broadcast of footballBroadcasts) {
         const gameMonth = broadcast.date.substring(8, 10);
         const gameDay = broadcast.date.substring(5, 7);
         const gameHour = broadcast.date.substring(13, 15);
@@ -113,7 +114,8 @@ export class SaveBroadcastsJob {
               date: gameDate,
             });
 
-            broadcast.transmissions.forEach(async (channel_name: string) => {
+            // broadcast.transmissions.forEach(async (channel_name: string) => {
+            for await (const channel_name of broadcast.transmissions) {
               let channel_id: string;
               const channelAlreadyExists =
                 await this.channelsRepository.findByName(channel_name);
@@ -130,10 +132,10 @@ export class SaveBroadcastsJob {
                 game_id: game.id,
                 channel_id,
               });
-            });
+            }
           }
         }
-      });
+      }
     }
   }
 }
