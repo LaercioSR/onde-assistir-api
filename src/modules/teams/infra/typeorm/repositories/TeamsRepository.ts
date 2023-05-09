@@ -15,6 +15,12 @@ class TeamsRepository implements ITeamsRepository {
   }
 
   async create({ name, logo }: ICreateTeamDTO): Promise<Team> {
+    const teamAlreadyExists = this.findByName(name);
+
+    if (teamAlreadyExists) {
+      return teamAlreadyExists;
+    }
+
     const team = this.repository.create({ name, logo });
 
     await this.repository.save(team);
