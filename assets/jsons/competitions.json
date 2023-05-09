@@ -154,5 +154,11 @@
     "logo": "https://vetores.org/wp-content/uploads/ligue-1.png",
     "region_level": "Nacional",
     "origin": "França"
+  },
+  {
+    "name": "NBA",
+    "logo": "https://upload.wikimedia.org/wikipedia/pt/b/b6/NBALogo.svg.png",
+    "region_level": "Nacional",
+    "origin": "Estados Unidos"
   }
 ]

@@ -19,6 +19,12 @@ class CompetitionsRepository implements ICompetitionsRepository {
     region_level,
     origin,
   }: ICreateCompetitionDTO): Promise<Competition> {
+    const competitionAlreadyExists = this.findByName(name);
+
+    if (competitionAlreadyExists) {
+      return competitionAlreadyExists;
+    }
+
     const competition = this.repository.create({
       name,
       logo,
