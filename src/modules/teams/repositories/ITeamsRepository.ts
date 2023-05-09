@@ -5,6 +5,7 @@ import { Team } from "../infra/typeorm/entities/Team";
 interface ITeamsRepository {
   create(data: ICreateTeamDTO): Promise<Team>;
   findByName(name: string): Promise<Team>;
+  findByQuery(query: string): Promise<Team>;
   getGamesById(id: string): Promise<Game[]>;
   find(): Promise<Team[]>;
 }

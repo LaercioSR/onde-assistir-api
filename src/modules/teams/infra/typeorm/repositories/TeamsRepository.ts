@@ -2,6 +2,7 @@ import { Repository } from "typeorm";
 
 import { ICreateTeamDTO } from "@modules/teams/dtos/ICreateTeamDTO";
 import { ITeamsRepository } from "@modules/teams/repositories/ITeamsRepository";
+import { AppError } from "@shared/errors/AppError";
 import { AppDataSource } from "@shared/infra/typeorm/dataSource";
 
 import { Game } from "../entities/Game";
@@ -30,6 +31,23 @@ class TeamsRepository implements ITeamsRepository {
 
   async findByName(name: string): Promise<Team> {
     const team = await this.repository.findOne({ where: { name } });
+
+    if (!team) {
+      throw new AppError("Team not found!", 404);
+    }
+
+    return team;
+  }
+
+  async findByQuery(query: string): Promise<Team> {
+    const team = await this.repository
+      .createQueryBuilder()
+      .where("unaccent(name) LIKE unaccent(:query)", { query })
+      .getOne();
+
+    if (!team) {
+      throw new AppError("Team not found!", 404);
+    }
 
     return team;
   }
