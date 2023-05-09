@@ -4,7 +4,7 @@ const swaggerOptions = {
       display: none
     }
   `,
-  customSiteTitle: "API GameCastCentral Documentation",
-  // customfavIcon: "",
+  customSiteTitle: "API Onde Assistir Documentation",
+  customfavIcon: "http://ondeassistir.laerciorios.com/favicon.svg",
 };
 export default swaggerOptions;

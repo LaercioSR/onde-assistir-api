@@ -19,7 +19,7 @@ class ChannelsRepository implements IChannelsRepository {
     source,
     link,
   }: ICreateChannelDTO): Promise<Channel> {
-    const channelAlreadyExists = this.findByName(name);
+    const channelAlreadyExists = await this.findByName(name);
 
     if (channelAlreadyExists) {
       return channelAlreadyExists;
