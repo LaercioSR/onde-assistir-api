@@ -32,10 +32,6 @@ class TeamsRepository implements ITeamsRepository {
   async findByName(name: string): Promise<Team> {
     const team = await this.repository.findOne({ where: { name } });
 
-    if (!team) {
-      throw new AppError("Team not found!", 404);
-    }
-
     return team;
   }
 
