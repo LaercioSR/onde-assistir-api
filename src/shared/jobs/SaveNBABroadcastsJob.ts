@@ -84,6 +84,7 @@ export class SaveNBABroadcastsJob {
                     `${awayTeam.teamCity} ${awayTeam.teamName}`
                   );
                   const date = new Date(gameDateTimeUTC);
+                  date.setHours(date.getHours() - 3);
 
                   if (team_home && team_away) {
                     const game = await this.gamesRepository.create({
