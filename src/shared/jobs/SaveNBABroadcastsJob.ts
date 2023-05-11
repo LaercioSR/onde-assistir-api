@@ -57,8 +57,11 @@ export class SaveNBABroadcastsJob {
     todayDate.setHours(0, 0, 0, 0);
 
     const nba = await this.competitionsRepository.findByName("NBA");
+    const nbaLeaguePass = await this.channelsRepository.findByName(
+      "NBA League Pass"
+    );
 
-    if (nba) {
+    if (nba && nbaLeaguePass) {
       try {
         const response = await axios.get(
           "https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_11.json"
@@ -94,6 +97,11 @@ export class SaveNBABroadcastsJob {
                       date,
                     });
 
+                    // Every NBA game plays on League Pass
+                    await this.broadcastsRepository.create({
+                      game_id: game.id,
+                      channel_id: nbaLeaguePass.id,
+                    });
                     broadcasters.intlTvBroadcasters.forEach(
                       async (broadcaster) => {
                         let channel_id: string;
@@ -115,6 +123,18 @@ export class SaveNBABroadcastsJob {
                           channel_id,
                           link: broadcaster.broadcasterVideoLink,
                         });
+
+                        // Every game that's on ESPN is on Star+ too
+                        if (broadcaster.broadcasterDisplay === "ESPN") {
+                          const starPlus =
+                            await this.channelsRepository.findByName("Star+");
+                          if (starPlus) {
+                            await this.broadcastsRepository.create({
+                              game_id: game.id,
+                              channel_id: starPlus.id,
+                            });
+                          }
+                        }
                       }
                     );
                   }
