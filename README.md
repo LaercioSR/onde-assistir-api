@@ -15,13 +15,13 @@
 
 Onde Assistir (Where to Watch) is a platform with broadcasts of sports games (mainly football), focused on the Brazilian market, with options for broadcasts on TV and the Internet.
 
-![Documentation Screenshot](https://raw.githubusercontent.com/LaercioSR/onde-assistir-front/main/assets/images/screenshot.png)
+![Documentation Screenshot](https://raw.githubusercontent.com/LaercioSR/onde-assistir-api/main/assets/images/screenshot.png#vitrinedev)
 
 Access the documentation at: <https://ondeassistir.laerciorios.com/api/docs/>
 
 The platform emerged as an academic project in the Computer Engineering course (UEFS) in the Network Programming (WEB Programming) discipline taught by Professor João Rocha and continued as a personal challenge and an opportunity to improve new knowledge.
 
-For more details about the discipline, see: [EXA844](https://sites.google.com/a/ecomp.uefs.br/joao/home/courses/exa844#vitrinedev)
+For more details about the discipline, see: [EXA844](https://sites.google.com/a/ecomp.uefs.br/joao/home/courses/exa844)
 
 Onde Assistir is online and you can access it at:
 
