@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://ondeassistir.laerciorios.com/api",
+      "url": "https://ondeassistir.laerciorios.com/api",
       "description": "The production API server"
     },
     {
