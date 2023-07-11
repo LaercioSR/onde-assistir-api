@@ -31,31 +31,37 @@ See more about the front-end project in:
 
 * [GitHub](https://github.com/LaercioSR/onde-assistir-front)
 
+Currently the project uses a crawler in Python to extract information from the games, to learn more about the crawler either at:
+
+* [GitHub](https://github.com/LaercioSR/onde-assistir-crawler)
+
 ## How to Run
 
 ### Prerequisites
 
-To run the project you will need to have [node](https://nodejs.org/en/download) installed on your machine.
+To run the project you will need to have [Docker](https://www.docker.com/) and docker composer installed on your machine.
 
 ### Running
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:LaercioSR/onde-assistir-front.git
+$ git clone git@github.com:LaercioSR/onde-assistir-api.git
+
+# Clone the crawler repository
+$ git clone git@github.com:LaercioSR/onde-assistir-crawler.git
 
 # Access the project folder in terminal/cmd
-$ cd onde-assistir-front
+$ cd onde-assistir-api
 
 # Copy the .env
 $ cp .env.example .env
 # After that it is necessary to fill the .env.
+# Remember to enter the crawler folder path correctly. Example:
+# CRAWLER_FOLDER=~/projects/onde-assistir-crawler
 
-# Install the dependencies
-$ npm install
-
-# Run the application with the following command
-$ npm run dev
-# If everything is correct, the application can be accessed through the URL https://localhost:3333
+# Run the application in development mode
+$ docker compose -f "docker-compose.dev.yml" up -d --build
+# If everything is correct the api can be accessed via the URL http://localhost:3333 .
 ```
 
 ## Technologies
