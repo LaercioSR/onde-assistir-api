@@ -28,6 +28,22 @@ export class CreateTableTransmition1681220324181 implements MigrationInterface {
           {
             name: "date",
             type: "timestamp",
+            isNullable: true,
+          },
+          {
+            name: "detail",
+            type: "string",
+            isNullable: true,
+          },
+          {
+            name: "localization",
+            type: "string",
+            isNullable: true,
+          },
+          {
+            name: "external_id",
+            type: "string",
+            isNullable: true,
           },
           {
             name: "created_at",
@@ -64,7 +80,7 @@ export class CreateTableTransmition1681220324181 implements MigrationInterface {
           },
           {
             name: "FKGameCompetition",
-            referencedTableName: "competition",
+            referencedTableName: "competition_edition",
             referencedColumnNames: ["id"],
             columnNames: ["competition_id"],
             onDelete: "CASCADE",

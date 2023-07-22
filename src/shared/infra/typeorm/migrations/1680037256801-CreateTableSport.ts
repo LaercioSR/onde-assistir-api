@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateTableCompetition1681220177481 implements MigrationInterface {
+export class CreateTableSport1680037256801 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "competition",
+        name: "sport",
         columns: [
           {
             name: "id",
@@ -17,17 +17,8 @@ export class CreateTableCompetition1681220177481 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "sport_id",
-            type: "uuid",
-          },
-          {
             name: "logo",
             type: "varchar",
-            isNullable: true,
-          },
-          {
-            name: "region_id",
-            type: "uuid",
             isNullable: true,
           },
           {
@@ -46,25 +37,11 @@ export class CreateTableCompetition1681220177481 implements MigrationInterface {
             isNullable: true,
           },
         ],
-        foreignKeys: [
-          {
-            name: "FKCompetitionSport",
-            referencedTableName: "sport",
-            referencedColumnNames: ["id"],
-            columnNames: ["sport_id"],
-          },
-          {
-            name: "FKCompetitionRegion",
-            referencedTableName: "region",
-            referencedColumnNames: ["id"],
-            columnNames: ["region_id"],
-          },
-        ],
       })
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("competition");
+    await queryRunner.dropTable("sport");
   }
 }

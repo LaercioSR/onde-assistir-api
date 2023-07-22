@@ -1,10 +1,12 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateTableCompetition1681220177481 implements MigrationInterface {
+export class CreateTableCompetitionEdition1681220313271
+  implements MigrationInterface
+{
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "competition",
+        name: "competition_edition",
         columns: [
           {
             name: "id",
@@ -13,22 +15,12 @@ export class CreateTableCompetition1681220177481 implements MigrationInterface {
             default: "gen_random_uuid()",
           },
           {
-            name: "name",
-            type: "varchar",
-          },
-          {
-            name: "sport_id",
+            name: "competition_id",
             type: "uuid",
           },
           {
-            name: "logo",
+            name: "detail",
             type: "varchar",
-            isNullable: true,
-          },
-          {
-            name: "region_id",
-            type: "uuid",
-            isNullable: true,
           },
           {
             name: "created_at",
@@ -48,16 +40,10 @@ export class CreateTableCompetition1681220177481 implements MigrationInterface {
         ],
         foreignKeys: [
           {
-            name: "FKCompetitionSport",
-            referencedTableName: "sport",
+            name: "FKCompetitionEdition",
+            referencedTableName: "competition",
             referencedColumnNames: ["id"],
-            columnNames: ["sport_id"],
-          },
-          {
-            name: "FKCompetitionRegion",
-            referencedTableName: "region",
-            referencedColumnNames: ["id"],
-            columnNames: ["region_id"],
+            columnNames: ["competition_id"],
           },
         ],
       })
@@ -65,6 +51,6 @@ export class CreateTableCompetition1681220177481 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable("competition");
+    await queryRunner.dropTable("competition_edition");
   }
 }

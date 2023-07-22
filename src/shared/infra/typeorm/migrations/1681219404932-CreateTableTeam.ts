@@ -19,6 +19,7 @@ export class CreateTableTeam1681219404932 implements MigrationInterface {
           {
             name: "logo",
             type: "varchar",
+            isNullable: true,
           },
           {
             name: "created_at",
