@@ -47,16 +47,12 @@ export class CreateTableBroadcast1681220671620 implements MigrationInterface {
             referencedTableName: "game",
             referencedColumnNames: ["id"],
             columnNames: ["game_id"],
-            onDelete: "CASCADE",
-            onUpdate: "CASCADE",
           },
           {
             name: "FKBroadcastChannel",
             referencedTableName: "channel",
             referencedColumnNames: ["id"],
             columnNames: ["channel_id"],
-            onDelete: "CASCADE",
-            onUpdate: "CASCADE",
           },
         ],
       })

@@ -1,10 +1,4 @@
-import {
-  MigrationInterface,
-  QueryRunner,
-  Table,
-  TableColumn,
-  TableForeignKey,
-} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateTableRegion1680037809991 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -49,42 +43,9 @@ export class CreateTableRegion1680037809991 implements MigrationInterface {
         ],
       })
     );
-    await queryRunner.dropColumns("competition", ["region_level", "origin"]);
-    await queryRunner.addColumn(
-      "competition",
-      new TableColumn({
-        name: "region_id",
-        type: "uuid",
-        isNullable: true,
-      })
-    );
-    await queryRunner.createForeignKey(
-      "competition",
-      new TableForeignKey({
-        name: "FKCompetitionRegion",
-        referencedTableName: "region",
-        referencedColumnNames: ["id"],
-        columnNames: ["region_id"],
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
-      })
-    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable("region");
-    await queryRunner.addColumns("competition", [
-      new TableColumn({
-        name: "region_level",
-        type: "varchar",
-        isNullable: true,
-      }),
-      new TableColumn({
-        name: "origin",
-        type: "varchar",
-        isNullable: true,
-      }),
-    ]);
-    await queryRunner.dropColumn("competition", "region_id");
   }
 }

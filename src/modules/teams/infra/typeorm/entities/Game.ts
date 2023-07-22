@@ -11,7 +11,7 @@ import {
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-import { Competition } from "@modules/competitions/infra/typeorm/entities/Competition";
+import { CompetitionEdition } from "@modules/competitions/infra/typeorm/entities/CompetitionEdition";
 
 import { Broadcast } from "./Broadcast";
 import { Team } from "./Team";
@@ -38,12 +38,21 @@ export class Game {
   @Column()
   competition_id?: string;
 
-  @ManyToOne(() => Competition, { eager: true })
+  @ManyToOne(() => CompetitionEdition, { eager: true })
   @JoinColumn({ name: "competition_id" })
-  competition?: Competition;
+  competition?: CompetitionEdition;
 
   @Column()
-  date!: Date;
+  date?: Date;
+
+  @Column()
+  detail?: string;
+
+  @Column()
+  localization?: string;
+
+  @Column()
+  external_id?: string;
 
   @OneToMany(() => Broadcast, (broadcast) => broadcast.game, { eager: true })
   broadcasts: Broadcast[];

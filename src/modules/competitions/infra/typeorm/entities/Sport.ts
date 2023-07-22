@@ -16,7 +16,15 @@ export class Sport {
   @Column()
   name!: string;
 
-  @Column()
+  @Column({
+    transformer: {
+      to: (value: string) => value,
+      from: (value: string) => {
+        if (value) return value;
+        return `${process.env.API_URL}/image/sports_score.svg`;
+      },
+    },
+  })
   logo?: string;
 
   @CreateDateColumn({

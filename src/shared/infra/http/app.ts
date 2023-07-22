@@ -3,6 +3,7 @@ import "express-async-errors";
 import "dotenv/config";
 import cors from "cors";
 import express, { NextFunction, Request, Response } from "express";
+import { resolve } from "path";
 import swaggerUi from "swagger-ui-express";
 
 import "@shared/container";
@@ -24,6 +25,9 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerFile, swaggerOptions)
 );
+
+const assetsFolder = resolve(__dirname, "..", "..", "..", "..", "assets");
+app.use("/api/icons", express.static(`${assetsFolder}/icons`));
 
 app.use("/api", router);
 
